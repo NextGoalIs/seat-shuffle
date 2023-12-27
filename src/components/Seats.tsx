@@ -1,4 +1,17 @@
-const Seats = () => {
+import { useState } from "react";
+import shuffleArray from "../utils/shuffle-array";
+
+interface Props {
+  peopleNumber: number;
+}
+
+const Seats: React.FC<Props> = ({ peopleNumber }) => {
+  const [peopleArray, _] = useState<number[]>(() =>
+    shuffleArray(new Array(peopleNumber).fill(0).map((_, index) => index + 1))
+  );
+
+  let seatIndex = 0;
+
   return (
     <div className="text-6xl w-full h-full flex justify-center items-center">
       <div className="w-[500px] h-[500px] bg-pink-100 flex flex-wrap">
@@ -13,7 +26,9 @@ const Seats = () => {
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="3"
-        ></div>
+        >
+          {(peopleNumber === 6 || peopleNumber === 8) && <span>{peopleArray[seatIndex++]}</span>}
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="4"
@@ -22,6 +37,7 @@ const Seats = () => {
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="5"
         ></div>
+        {/*  */}
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="6"
@@ -29,19 +45,26 @@ const Seats = () => {
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="7"
-        ></div>
+        >
+          <span>{peopleArray[seatIndex++]}</span>
+        </div>
         <div
-          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
+          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4 border-black"
           id="8"
-        ></div>
+        >
+          테
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="9"
-        ></div>
+        >
+          <span>{peopleArray[seatIndex++]}</span>
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="10"
         ></div>
+        {/*  */}
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="11"
@@ -49,19 +72,26 @@ const Seats = () => {
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="12"
-        ></div>
+        >
+          {(peopleNumber === 7 || peopleNumber === 8) && <span>{peopleArray[seatIndex++]}</span>}
+        </div>
         <div
-          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
+          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4 border-black"
           id="13"
-        ></div>
+        >
+          이
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="14"
-        ></div>
+        >
+          {(peopleNumber === 7 || peopleNumber === 8) && <span>{peopleArray[seatIndex++]}</span>}
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="15"
         ></div>
+        {/*  */}
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="16"
@@ -69,19 +99,26 @@ const Seats = () => {
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="17"
-        ></div>
+        >
+          <span>{peopleArray[seatIndex++]}</span>
+        </div>
         <div
-          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
+          className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4 border-black"
           id="18"
-        ></div>
+        >
+          블
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="19"
-        ></div>
+        >
+          <span>{peopleArray[seatIndex++]}</span>
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="20"
         ></div>
+        {/*  */}
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="21"
@@ -93,7 +130,9 @@ const Seats = () => {
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="23"
-        ></div>
+        >
+          <span>{peopleArray[seatIndex++]}</span>
+        </div>
         <div
           className="flex justify-center items-center w-[100px] h-[100px] bg-slate-400 border-4"
           id="24"
